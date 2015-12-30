@@ -1,0 +1,42 @@
+{
+  "name": "rxjs-book-space-ship",
+  "description": "rxjs-book-space-ship",
+  "version": "0.0.0",
+  "author": {
+    "name": "bouzuya",
+    "email": "m@bouzuya.net",
+    "url": "http://bouzuya.net"
+  },
+  "bugs": {
+    "url": "https://github.com/bouzuya/rxjs-book-space-ship/issues"
+  },
+  "dependencies": {
+    "rxjs": "^5.0.0-beta.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015": "^6.3.13",
+    "browserify": "^12.0.1",
+    "typescript": "^1.7.5"
+  },
+  "files": [
+    "./lib",
+    "./typings",
+    "README.md"
+  ],
+  "homepage": "https://github.com/bouzuya/rxjs-book-space-ship",
+  "keywords": [],
+  "main": "./lib/index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bouzuya/rxjs-book-space-ship"
+  },
+  "scripts": {
+    "babel": "babel tmp --preset es2015 --out-dir lib",
+    "browserify": "browserify lib/index.js -o bundle.js",
+    "build": "tsc && npm run babel && npm run browserify",
+    "clean": "rm -rf dist lib tmp typings",
+    "start": "npm run clean && npm run build && open index.html"
+  }
+}
